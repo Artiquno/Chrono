@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context="com.artiquno.chrono.MainActivity">
+
+	<LinearLayout
+		android:id="@+id/linearLayout"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="0dp"
+		android:layout_marginRight="0dp"
+		android:orientation="horizontal"
+		app:layout_constraintHorizontal_bias="0.0"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintBottom_toBottomOf="parent"
+		android:layout_marginBottom="0dp">
+
+		<Button
+			android:id="@+id/watchStarter"
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:layout_weight="1"
+			android:onClick="stopWatch"
+			android:text="@string/start"
+			app:layout_constraintLeft_toLeftOf="parent"/>
+
+		<Button
+			android:id="@+id/watchResumer"
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:layout_weight="1"
+			android:text="@string/resume"
+			app:layout_constraintHorizontal_bias="0.0"
+			app:layout_constraintLeft_toRightOf="@+id/watchStarter"
+			app:layout_constraintRight_toRightOf="parent"
+			app:layout_constraintTop_toTopOf="@+id/watchStarter"/>
+
+	</LinearLayout>
+
+	<com.artiquno.chrono.Chronometer
+		android:id="@+id/chrono"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginEnd="8dp"
+		android:layout_marginLeft="8dp"
+		android:layout_marginRight="8dp"
+		android:layout_marginStart="8dp"
+		android:layout_marginTop="8dp"
+		android:textAlignment="textStart"
+		android:textSize="30sp"
+		android:visibility="visible"
+		app:layout_constraintHorizontal_bias="0.503"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/workerList"
+		tools:text="00:00.0"/>
+
+	<Spinner
+		android:id="@+id/workerList"
+		android:layout_width="0dp"
+		android:layout_height="40dp"
+		android:layout_marginEnd="8dp"
+		android:layout_marginLeft="8dp"
+		android:layout_marginRight="8dp"
+		android:layout_marginStart="8dp"
+		android:layout_marginTop="8dp"
+		app:layout_constraintHorizontal_bias="0.0"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toTopOf="parent"/>
+
+	<EditText
+		android:id="@+id/manualTime"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="8dp"
+		android:layout_marginRight="8dp"
+		android:layout_marginTop="8dp"
+		android:ems="10"
+		android:inputType="time"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/chrono"/>
+
+	<TextView
+		android:id="@+id/resultView"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="TextView"
+		android:layout_marginTop="8dp"
+		app:layout_constraintTop_toBottomOf="@+id/manualTime"
+		android:layout_marginLeft="8dp"
+		app:layout_constraintLeft_toLeftOf="parent"/>
+
+</android.support.constraint.ConstraintLayout>
